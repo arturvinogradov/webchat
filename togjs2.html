@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+       <!-- You have to put this piece of JavaScript code into your web page
+	Note: Use <!DOCTYPE html> on the page where snippet located for better rendering
+	-->
+	<link type="text/css" rel="stylesheet" href="https://arturcent71.bugfocus.com/clientweb/chat-client-v4/css/form.css">
+       <!--<form name="testForm">-->
+           <fieldset>
+               <label for="textId"></label>
+               <input id="textId" placeholder="Text field" type="text" />
+           </fieldset>
+           <fieldset>
+               <label for="emailId"></label>
+               <input id="emailId" placeholder="Email field" type="email" />
+           </fieldset>
+           <fieldset>
+               <label for="passwordId"></label>
+               <input id="passwordId" placeholder="Password field" type="password" />
+           </fieldset>
+           <fieldset>
+               <label for="numberId"></label>
+               <input id="numberId" placeholder="Number field" type="number" />
+           </fieldset>
+           <fieldset>
+               <label for="checkBoxId"></label>
+               <input id="checkBoxId" placeholder="CheckBox field" type="checkbox" />
+           </fieldset>
+           <fieldset>
+               <label for="radioId"></label>
+               <input id="radioId" placeholder="Radio field" type="radio" />
+           </fieldset>
+           <fieldset>
+               <label for="telId"></label>
+               <input id="telId" placeholder="Tel field" type="tel" />
+           </fieldset>
+           <fieldset>
+               <label for="rangeId"></label>
+               <input id="rangeId" placeholder="Range field" type="range" />
+           </fieldset>
+           <fieldset>
+               <label for="dateId"></label>
+               <input id="dateId" placeholder="Range field" type="date" />
+           </fieldset>
+           <fieldset>
+               <label for="fileId"></label>
+               <input id="fileId" type="file">
+           </fieldset>
+       <!--</form>-->
+	<script type="text/javascript">
+
+        var callbacks = {
+            weAreOnline: function () {
+                console.log('weAreOnline');
+            },
+            weAreOffline: function () {
+                console.log('weAreOffline');
+            },
+            windowCloseIconClicked: function () {
+                console.log('windowCloseIconClicked');
+            },
+            preChatWindowPhoneButtonClicked: function () {
+                console.log('preChatWindowPhoneButtonClicked');
+            },
+            preChatWindowChatButtonClicked: function () {
+                console.log('preChatWindowChatButtonClicked');
+            },
+            preChatWindowCancelButtonClicked: function () {
+                console.log('preChatWindowCancelButtonClicked');
+            },
+            reactiveChatButtonClicked: function () {
+                console.log('reactiveChatButtonClicked');
+            },
+            proactiveYes: function () {
+                console.log('proactiveYes');
+            },
+            proactiveNo: function () {
+                console.log('proactiveNo');
+            },
+            proactiveChatOffered: function () {
+                console.log('proactiveChatOffered');
+            }
+        };
+
+        SERVICE_PATTERN_CHAT_CONFIG = {
+        	appId: 'test',
+        	apiUrl: 'https://arturcent71.bugfocus.com/clientweb/api/v1',
+        	tenantUrl: 'example.com',
+        	chatPath: 'https://arturcent71.bugfocus.com/clientweb/chat-client-v4/',
+            callbacks: callbacks,
+            togetherJS_enabled : 'true'
+
+        	/*
+        	 // Default customer data, it can be collected on current site's context
+         	first_name: '',
+         	last_name: '',
+         	email: '',
+         	phone_number: ''
+ 			*/
+    	};
+	</script>
+    <script type="text/javascript" src="https://arturcent71.bugfocus.com/clientweb/chat-client-v4/js/init.js"></script>
+    </body>
+</html>
