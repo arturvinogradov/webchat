@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="dns-prefetch" href="https://res.klook.com" />
+    <link rel="dns-prefetch" href="https://cdn.klook.com" />
+
+    <script>
+        //first register on error, so if the onerror not registerd, the error 
+        //before the register is also cpatured
+        var _window_error_list = [];
+        window.onerror = function (){
+            _window_error_list.push(Array.prototype.slice.call(arguments))
+        }
+        //page start time
+        var _window_page_start = Date.now();
+    
+        function _addListener(obj, eventName, listener) {
+            if( obj.addEventListener ) {
+                obj.addEventListener( eventName, listener, false );
+            } else {
+                obj.attachEvent("on" + eventName, listener);
+            }
+        }
+    
+        _addListener(document,"DOMContentLoaded",function(){
+            //console.log("DOM fully loaded and parsed");
+            window._window_dom_loaded = Date.now();
+        });
+    
+        _addListener(window,"load",function(){
+            //console.log("page fully loaded and parsed");
+            window._window_window_loaded = Date.now();
+        });
+    </script>
+
+    <title> klook chat service </title>
+
+        <meta name="description" content="Discover and book amazing travel experiences with Klook. Find curated activities and fun things to do with exclusive insider discounts.">
+
+        <meta name="keywords" content="Asia Tours, Cheap tickets, things to do, Universal Studios Singapore, Hong Kong Disneyland, Vietnam Tourism, Thailand Travel, Japan Tourism, Southeast Asia Tours, Southeast Asia Attractions, Mauritius">
+
+        <meta name="msvalidate.01" content="F9AF19DB43086103E6C6EF03373C2EEF" />
+        <meta name="baidu-site-verification" content="r9lUuaHRPz" />
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta content="telephone=no,email=no" name="format-detection">
+        <meta name="author" content="Klook Travel"/>
+        <meta property="fb:pages" content="1437638383172374" />
+        <link rel="shortcut icon" href="https://cdn.klook.com/s/dist_web/assert/comm/imgs/icon_32X32-098cf2db20.png" type="image/x-icon"/>
+        <meta http-equiv="Cache-control" content="no-transform">
+        <meta http-equiv="content-language" content="en">
+        <meta name="google-site-verification" content="m-vUVyQRvMiIbMOyDm-13PmkhgZHQ0O3JqRVkfSB7uw" />
+        <link rel="canonical" href="https://www.klook.com/chat/" >
+            <link rel="alternate" href="https://www.klook.com/chat/" hreflang="en">
+            <link rel="alternate" href="https://www.klook.com/zh-TW/chat/" hreflang="zh-Hant-TW">
+            <link rel="alternate" href="https://www.klook.com/zh-CN/chat/" hreflang="zh-Hans-CN">
+            <link rel="alternate" href="https://www.klook.com/zh-HK/chat/" hreflang="zh-Hant-HK">
+            <link rel="alternate" href="https://www.klook.com/ko/chat/" hreflang="ko">
+            <link rel="alternate" href="https://www.klook.com/vi/chat/" hreflang="vi">
+            <link rel="alternate" href="https://www.klook.com/th/chat/" hreflang="th">
+            <link rel="alternate" href="https://www.klook.com/id/chat/" hreflang="id">
+            <link rel="alternate" href="https://www.klook.com/ja/chat/" hreflang="ja">
+            <link rel="alternate" href="https://www.klook.com/en-AU/chat/" hreflang="en-AU">
+            <link rel="alternate" href="https://www.klook.com/en-CA/chat/" hreflang="en-CA">
+            <link rel="alternate" href="https://www.klook.com/en-GB/chat/" hreflang="en-GB">
+            <link rel="alternate" href="https://www.klook.com/en-HK/chat/" hreflang="en-HK">
+            <link rel="alternate" href="https://www.klook.com/en-IN/chat/" hreflang="en-IN">
+            <link rel="alternate" href="https://www.klook.com/en-MY/chat/" hreflang="en-MY">
+            <link rel="alternate" href="https://www.klook.com/en-NZ/chat/" hreflang="en-NZ">
+            <link rel="alternate" href="https://www.klook.com/en-PH/chat/" hreflang="en-PH">
+            <link rel="alternate" href="https://www.klook.com/en-SG/chat/" hreflang="en-SG">
+            <link rel="alternate" href="https://www.klook.com/en-US/chat/" hreflang="en-US">
+            <link rel="alternate" href="https://www.klook.com/zh-TW/chat/" hreflang="zh-Hant">
+        
+        <script>
+            !function(N,M){function L(){var a=I.getBoundingClientRect().width;a/F>540&&(a=540*F);var d=a/10;I.style.fontSize=d+"px",D.rem=N.rem=d}var K,J=N.document,I=J.documentElement,H=J.querySelector('meta[name="viewport"]'),G=J.querySelector('meta[name="flexible"]'),F=0,E=0,D=M.flexible||(M.flexible={});if(H){console.warn("将根据已有的meta标签来设置缩放比例");var C=H.getAttribute("content").match(/initial\-scale=([\d\.]+)/);C&&(E=parseFloat(C[1]),F=parseInt(1/E))}else{if(G){var B=G.getAttribute("content");if(B){var A=B.match(/initial\-dpr=([\d\.]+)/),z=B.match(/maximum\-dpr=([\d\.]+)/);A&&(F=parseFloat(A[1]),E=parseFloat((1/F).toFixed(2))),z&&(F=parseFloat(z[1]),E=parseFloat((1/F).toFixed(2)))}}}if(!F&&!E){var y=N.navigator.userAgent,x=(!!y.match(/android/gi),!!y.match(/iphone/gi)),w=x&&!!y.match(/OS 9_3/),v=N.devicePixelRatio;F=x&&!w?v>=3&&(!F||F>=3)?3:v>=2&&(!F||F>=2)?2:1:1,E=1/F}if(I.setAttribute("data-dpr",F),!H){if(H=J.createElement("meta"),H.setAttribute("name","viewport"),H.setAttribute("content","initial-scale="+1+", maximum-scale="+1+", minimum-scale="+1+", user-scalable=no, viewport-fit=cover"),I.firstElementChild){I.firstElementChild.appendChild(H)}else{var u=J.createElement("div");u.appendChild(H),J.write(u.innerHTML)}}N.addEventListener("resize",function(){clearTimeout(K),K=setTimeout(L,300)},!1),N.addEventListener("pageshow",function(b){b.persisted&&(clearTimeout(K),K=setTimeout(L,300))},!1),"complete"===J.readyState?J.body.style.fontSize=12*F/2+"px":J.addEventListener("DOMContentLoaded",function(){J.body.style.fontSize=12*F/2+"px"},!1),L(),D.dpr=N.dpr=F,D.refreshRem=L,D.rem2px=function(d){var c=parseFloat(d)*this.rem;return"string"==typeof d&&d.match(/rem$/)&&(c+="px"),c},D.px2rem=function(d){var c=parseFloat(d)/this.rem;return"string"==typeof d&&d.match(/px$/)&&(c+="rem"),c}}(window,window.lib||(window.lib={}));
+        </script>
+        
+        
+        
+            <!-- this is klook gtm for whole website -->
+            <!-- Google Tag Manager New-->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NWTPH"
+                              height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5NWTPH');</script>
+            <!-- End Google Tag Manager -->
+        
+        
+        
+        
+        
+        <!-- start Mixpanel -->
+        <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+            0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+            for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+        
+        mixpanel.init("c2ca8b423fd75a10792debf44cd6b51a");
+        </script>
+        <!-- end Mixpanel -->
+        
+
+<meta name="robots" content="noindex" />
+
+<link rel="stylesheet" href="https://cdn.klook.com/s/dist_web/assert/mobile/css/pages/chat-594767c1f2.css">
+
+
+  </head>
+
+  <body ontouchstart=""  class="lang_en    klook-webp " >
+                <header class="m_header flex_v_justify t0 m_bg_white j_m_header">
+                    <div class="m_header_left">
+                        <a class="destination_list" href="/destination_list">
+                            <i class="klook-icon-icon-menu t_gray t24"></i>
+                        </a>
+                        <a href="/" data-track-event="Others|Logo Clicked">
+                            <svg style="height:18px;enable-background:new 0 0 126 21;" version="1.1" id="klook-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 126 21" xml:space="preserve">
+                
+                <g id="logo-en">
+                    <path style="fill:#FF5722;" d="M54.1,0C54,0,54,0,54.1,0c-3.8,0-7,1.9-8.8,4.8C43.4,1.9,40.1,0,36.4,0c0,0-0.1,0-0.1,0
+                        c-5.8,0-10.5,4.8-10.4,10.6c0,5.8,4.7,10.4,10.5,10.4c0,0,0.1,0,0.1,0c3.7,0,6.9-1.9,8.8-4.8c1.9,2.9,5.1,4.8,8.8,4.8
+                        c0,0,0.1,0,0.1,0c5.8,0,10.5-4.8,10.4-10.6C64.5,4.7,59.8,0,54.1,0z M36.4,17.7L36.4,17.7c-2,0-3.8-0.7-5.1-2.1
+                        c-1.4-1.3-2.1-3.1-2.1-5c0-1.9,0.7-3.7,2.1-5.1c1.3-1.4,3.1-2.1,5.1-2.1h0.1l0,0l0,0c1.9,0,3.7,0.7,5.1,2.1c1.4,1.3,2.1,3.1,2.1,5
+                        C43.6,14.4,40.4,17.7,36.4,17.7z M54.1,17.7L54.1,17.7c-2,0-3.8-0.7-5.1-2.1c-1.4-1.3-2.1-3.1-2.1-5c0-1.9,0.7-3.7,2.1-5.1
+                        c1.3-1.4,3.1-2.1,5.1-2.1H54l0,0l0,0c1.9,0,3.7,0.7,5.1,2.1c1.4,1.3,2.1,3.1,2.1,5C61.3,14.4,58.1,17.7,54.1,17.7z"/>
+                    <path style="fill:#FF5722;" d="M0,0v21c1.8,0,3.3-1.5,3.3-3.3V3.3C3.3,1.5,1.8,0,0,0z"/>
+                    <path style="fill:#FF5722;" d="M25.4,17.7h-4.1V3.3c0-1.8-1.5-3.3-3.3-3.3l0,0v21h3.3h0h7.4l0,0C28.7,19.2,27.3,17.7,25.4,17.7z"/>
+                    <path style="fill:#FF5722;" d="M65.9,0L65.9,0v21l0,0c1.8,0,3.3-1.5,3.3-3.3V3.3C69.2,1.5,67.7,0,65.9,0z"/>
+                    <path style="fill:#FF5722;" d="M80.2,16.3l-5.8-5.8l5.8-5.8c1.3-1.3,1.3-3.4,0-4.7L69.7,10.5L80.2,21l0,0C81.5,19.7,81.5,17.6,80.2,16.3z"/>
+                    <path style="fill:#FF5722;" d="M8.5,10.5l5.8-5.8c1.3-1.3,1.3-3.4,0-4.7L3.9,10.5L14.4,21l0,0c1.3-1.3,1.3-3.4,0-4.7L8.5,10.5z"/>
+                </g>
+                </svg>
+                
+                                    </a>
+                    </div>
+                    <div class="m_header_menu">
+                        <!-- 产品需要在全部页面都是全局搜索 -->
+                        <!-- <a href="                                                                                /search
+                                " -->
+                            <a href="/search"
+                            data-track-event="Search Box|Search Button Clicked"
+                            class="m_header_menu_item">
+                            <i class="klook-icon-search t_gray t24"></i>
+                        </a>
+                
+                
+                
+                                <a id="shoppingcart" href="/login?signin_jump=/shoppingcart" class="m_header_menu_item">
+                                    <i class="klook-icon-shopping-cart t_gray t24"></i>
+                                </a>
+                
+                
+                            
+                            <span id="slide-user-center-btn" class="m_header_menu_item">
+                                <svg class="klook-symbol t24" aria-hidden="true">
+                                    <use xlink:href="#icon-account"></use>
+                                </svg>
+                            </span>
+                    </div>
+                 </header>
+                <div class="m_aside_user_center f_hidden">
+                
+                </div>
+                
+                <!-- 退出登录弹窗 -->
+                <div id="logout-dialog" class="dialog_wrap">
+                    <div class="_klk_dialog">
+                        <div class="content">Are you sure you want to log out?</div>
+                        <div class="btn">
+                            <button type="button" class="dialog-btn dialog-btn-cancel">Cancel</button>
+                            <button type="button" class="dialog-btn dialog-btn-confirm">OK</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <script type="text/x-template" id="tpl_m_aside_user_center">
+                
+                        <div class="user-center-top {{#if user_info}}logged-in{{/if}}">
+                            <!-- 头像与用户名 -->
+                            <a class="user-info" href="{{#if user_info}}/{{@root._lang_path}}account_setting{{else}}/{{@root._lang_path}}login{{/if}}">
+                                {{#if user_info}}
+                                {{#user_info}}
+                                <span class="user-avatar">
+                                        <img class="user-img" src="{{get_avatar_url avatar_url}}" class="useImg m_circle_box g_ib">
+                                    </span>
+                                <span class="user-name">
+                                        {{#if username}}
+                                            {{ username }}
+                                        {{else}}
+                                            {{!-- {{t "update_user_information"}} --}}
+                                            {{t 'klook_user'}}
+                                        {{/if}}
+                                    </span>
+                                {{/user_info}}
+                                {{else}}
+                                <span class="user-avatar">
+                                    <img class="user-img" src="https://cdn.klook.com/upload/img200X200/avatar.png">
+                                </span>
+                                <span class="user-name">
+                                    {{t "header.SignIn"}}/{{t "header.SignUp"}}
+                                </span>
+                                {{/if}}
+                            </a>
+                            {{#if user_info}}
+                            <a class="icon-wrapper" href="/{{@root._lang_path}}account_setting">
+                                <svg class="klook-symbol icon--settings">
+                                    <use xlink:href="#icon-account-setting"></use>
+                                </svg>
+                            </a>
+                            {{/if}}
+                        </div>
+                
+                        <ul class="nav-wrap">
+                
+                            <!-- 积分&优惠码 -->
+                            {{#if user_info}}
+                            {{#user_info}}
+                            <li class="nav-item user-other-info">
+                                <a class="other-info-item" href="/{{@root._lang_path}}credits">
+                                    <span class="info-item-num">{{ credits }}</span>
+                                    <span class="info-item-name">
+                                        {{#if (gt credits 1) }}
+                                        {{t "profile.mobile.home.credits"}}
+                                        {{else}}
+                                        {{t "profile.mobile.home.credit"}}
+                                        {{/if}}
+                                    </span>
+                                </a>
+                                <a class="other-info-item" href="/{{@root._lang_path}}coupons">
+                                    {{#if (gt valid_coupons 0) }}
+                                    <span class="info-item-num">{{ valid_coupons }}</span>
+                                    {{else}}
+                                    <span class="info-item-icon"></span>
+                                    {{/if}}
+                                    <span class="info-item-name">
+                                        {{#if (eq valid_coupons 0)}}
+                                        {{t 'profile.mobile.home.no_promo_codes'}}
+                                        {{else if (gt valid_coupons 1) }}
+                                        {{t "profile.mobile.home.promo_codes"}}
+                                        {{else}}
+                                        {{t "profile.mobile.home.promo_code"}}
+                                        {{/if}}
+                                    </span>
+                                </a>
+                            </li>
+                            {{/user_info}}
+                            {{/if}}
+                
+                            <!-- 全部目的地 -->
+                            <!-- <li class="nav-item all-destinations">
+                                <a class="nav-link" href="/{{@root._lang_path}}destination_list">
+                                    <i class="klook-icon klook-icon-location3 t_gray t24"></i>
+                                    {{t "search_all_destinations_button" }}
+                                </a>
+                            </li> -->
+                
+                
+                            <!-- 我的订单 -->
+                            <li class="nav-item margin-top-8">
+                                <a class="nav-link" href="/{{@root._lang_path}}bookings">
+                                    <i class="klook-icon klook-icon-bookings t_gray t24"></i>
+                                    {{t "header.Bookings" }}
+                                </a>
+                            </li>
+                
+                            <!-- 心愿清单 -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/{{@root._lang_path}}wishlist">
+                                    <i class="klook-icon klook-icon-uncollect t_gray t20" style="padding-left: 2px"></i>
+                                    {{t "profile.mobile.wishlist.header" }}
+                                </a>
+                            </li>
+                
+                            <!-- 评论中心 -->
+                            <li class="nav-item {{#if has_new_unreview}}new{{/if}}">
+                                <a class="nav-link" href="/{{@root._lang_path}}my_reviews" data-track-event="My Account|My Review Button Clicked">
+                                    <svg class="klook-symbol klook-icon klook-icon-uncollect t26">
+                                        <use xlink:href="#icon-reviews-empty"></use>
+                                    </svg>
+                                    {{t "profile.v2.dashboard.reviews" }}
+                                </a>
+                            </li>
+                
+                            <!-- 礼品卡 -->
+                            {{#evl (showGiftCardEntry @root._lang)}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/{{@root._lang_path}}balance">
+                                    <i class="klook-icon klook-icon-cashcredit t_gray t24"></i>
+                                    {{t "gift_card_klook" }}
+                                </a>
+                            </li>
+                            {{/evl}}
+                
+                            <!-- YSim -->
+                            {{#if (showMyYSIMEntry @root._lang)}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/{{@root._lang_path}}my_ysim">
+                                    <svg class="klook-symbol t_gray t24 klook-icon">
+                                        <use xlink:href="#icon-ysimcard"></use>
+                                    </svg>
+                                    {{t 'ysim.my_ysim'}}
+                                </a>
+                            </li>
+                            {{/if}}
+                
+                            <!-- 邀请好友 -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/{{@root._lang_path}}invite">
+                                    <i class="klook-icon klook-icon-earn-rewards t_gray t24"></i>
+                                    {{t "payresult.invite" }}
+                                </a>
+                            </li>
+                
+                            <!-- 帮助中心 -->
+                            <li class="nav-item margin-top-8">
+                                <a class="nav-link" href="/{{@root._lang_path}}faq">
+                                    <i class="klook-icon klook-icon-icon-help t_gray t24"></i>
+                                    {{t "profile.mobile.home.help_center" }}
+                                </a>
+                            </li>
+                
+                            <!-- 客服呼叫中心 -->
+                            {{#if (showChatPageEntry @root._lang false)}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/{{@root._lang_path}}chat">
+                                    <svg class="klook-icon nav-svg-icon"><use xlink:href="#icon-chat"></use></svg>
+                                    {{t "chat.entry.title.chatUs"}}
+                                </a>
+                            </li>
+                            {{/if}}
+                
+                            <!-- 退出登录 -->
+                            {{#if user_info}}
+                            <li class="nav-item logout margin-top-8">
+                                {{t "profile.mobile.edit.logout" }}
+                            </li>
+                            {{/if}}
+                        </ul>
+                </script>                <div class="m_header_placeholder"></div>
+
+
+<div id="app">
+    <chat :is-from-app="is_from_app" :referer-url="refererUrl"></chat>
+</div>
+
+<script>
+    var USER_TOKEN = undefined;
+
+    var USER_INFO = '';
+    var USER_FIRST_NAME = USER_FAMILY_NAME = USER_EMAIL = USER_IMG ='';
+</script>
+
+
+            <footer class="j_m_footer m_footer">
+                <div class="section m_main">
+            
+                    <div class="flex_justify">
+                        <div class="g_rel">
+                            <label class="t14 t_white select-tag-left select-tag">
+                                English (International)
+                            </label>
+                            <select class="t14 t_white" name="" id="languageSelect">
+                                <option value="en-AU" >English (Australia)</option><option value="en-CA" >English (Canada)</option><option value="en-HK" >English (Hong Kong)</option><option value="en-IN" >English (India)</option><option value="en-MY" >English (Malaysia)</option><option value="en-NZ" >English (New Zealand)</option><option value="en-PH" >English (Philippines)</option><option value="en-SG" >English (Singapore)</option><option value="en-US" >English (US)</option><option value="en-GB" >English (UK)</option><option value="en" selected>English (International)</option><option value="zh-CN" >简体中文</option><option value="zh-HK" >繁體中文 (香港)</option><option value="zh-TW" >繁體中文 (台灣)</option><option value="ja" >日本語</option><option value="ko" >한국어</option><option value="th" >ไทย</option><option value="vi" >Tiếng Việt</option><option value="id" >Bahasa Indonesia</option>
+                            </select>
+                            <i class="klook-icon-arrowDown t12"></i>
+                        </div>
+                        <div class="g_rel">
+                            <label class="t14 t_white select-tag-right select-tag">
+                                Russian Ruble | RUB
+                            </label>
+                            <select class="t14 t_white" name="" id="currencySelect">
+                                <option value="SGD"
+                                >Singapore Dollar | SGD</option>
+                                <option value="HKD"
+                                >Hong Kong Dollar | HKD</option>
+                                <option value="PHP"
+                                >Philippine Peso | PHP</option>
+                                <option value="MYR"
+                                >Malaysian Ringgit | MYR</option>
+                                <option value="TWD"
+                                >New Taiwan Dollar | TWD</option>
+                                <option value="USD"
+                                >U.S. Dollar | USD</option>
+                                <option value="CNY"
+                                >Chinese Yuan | CNY</option>
+                                <option value="KRW"
+                                >Korean Won | KRW</option>
+            
+                                <option value="AED"
+                                >U.A.E Dirham | AED</option>
+                                <option value="AUD"
+                                >Australian Dollar | AUD</option>
+                                <option value="CAD"
+                                >Canadian Dollar | CAD</option>
+                                <option value="CHF"
+                                >Swiss Franc | CHF</option>
+                                <option value="DKK"
+                                >Danish Krone | DKK</option>
+                                <option value="EGP"
+                                >Egyptian Pound | EGP</option>
+                                <option value="EUR"
+                                >Euro | EUR</option>
+                                <option value="FJD"
+                                >Fijian Dollar | FJD</option>
+                                <option value="GBP"
+                                >British Pound | GBP</option>
+                                <option value="IDR"
+                                >Indonesian Rupiah | IDR</option>
+                                <option value="INR"
+                                >Indian Rupee | INR</option>
+                                <option value="ISK"
+                                >Icelandic Krona | ISK</option>
+                                <option value="JOD"
+                                >Jordanian Dinar | JOD</option>
+                                <option value="JPY"
+                                >Japanese Yen | JPY</option>
+                                <option value="KHR"
+                                >Cambodian Riel | KHR</option>
+                                <option value="LAK"
+                                >Lao Kip | LAK</option>
+                                <option value="LBP"
+                                >Lebanese Pound | LBP</option>
+                                <option value="MAD"
+                                >Moroccan Dirham | MAD</option>
+                                <option value="MGA"
+                                >Malagasy Ariary | MGA</option>
+                                <option value="MMK"
+                                >Burmese Kyat | MMK</option>
+                                <option value="MOP"
+                                >Macau Pataca | MOP</option>
+                                <option value="MUR"
+                                >Mauritian Rupee | MUR</option>
+                                <option value="MXN"
+                                >Mexican Peso | MXN</option>
+                                <option value="NOK"
+                                >Norwegian Krone | NOK</option>
+                                <option value="NZD"
+                                >New Zealand Dollar | NZD</option>
+                                <option value="OMR"
+                                >Omani Rial | OMR</option>
+                                <option value="QAR"
+                                >Qatar Riyal | QAR</option>
+                                <option value="RUB"
+                                selected="selected"
+                                >Russian Ruble | RUB</option>
+                                <option value="SEK"
+                                >Swedish Krona | SEK</option>
+                                <option value="THB"
+                                >Thai Baht | THB</option>
+                                <option value="TRY"
+                                >Turkish Lira | TRY</option>
+                                <option value="VND"
+                                >Vietnamese Dong | VND</option>
+                                <option value="ZAR"
+                                >South African Rand | ZAR</option>
+                            </select>
+                            <i class="klook-icon-arrowDown t12"></i>
+                        </div>
+                    </div>
+                    <a class="t14" data-track-event="Help Center|Ask Klook Button Clicked" href="/ask_klook"><div class="flex_v_h btn_ask t16 links">Ask Klook</div></a>
+                    <div class=" links">
+                        <a href="/about/">About Us</a><a>|</a>
+                        <!--<a href="/business/">Corporate Discount</a><a>|</a>-->
+                        <a href="/careers/">Careers</a><a>|</a>
+                        <a href="/conditions/">Terms of Use</a><a>|</a>
+                        <a href="/faq?ask_klook/">Help</a>
+                    </div>
+                    <div class="icons flex_hc">
+                        <a target="_blank" href="https://instagram.com/klooktravel" class="klook-icon-instagram"></a>
+                        <a target="_blank" href="https://www.facebook.com/klookglobal/" class="klook-icon-facebook"></a>
+                        <a target="_blank"  href="https://twitter.com/klooktravel" class="klook-icon-twitter"></a>
+                    </div>
+                    <div class="t_mid">
+                        <a class="t_gray t12" href="/" data-track-event="Others|Visit Desktop Site Button Clicked" id="view_desktop"> Visit Desktop Site</a>
+                    </div>
+            
+                    <p class="copyright t12">© 2014-2019 Klook Travel Technology Limited. All Rights Reserved.<br>HK Travel Agent Licence: <a target="_blank" href="http://www.tichk.org/public/website/en/agents/22997/details.html">354005</a>.<br>SG Travel Agent Licence: <a target="_blank" href="https://trust.yoursingapore.com/trust/TaDir?USER=PUB&mode=publicSearch&FORMAT=HTML&DISPLAY_TYPE=DETAILS&page=1">02851</a>.<br>TW Travel Agent License: <a target="_blank" href="http://admin.taiwan.net.tw/travel/travel_d.aspx?no=202&d=800500">甲 03950</a>.</p>
+            
+                </div>
+            
+            </footer>
+
+    <div class="g_row1 hktb f_hidden j_bottom_banner" style="position:fixed;bottom:0;z-index:1000;">
+        <b class="close klook-icon-close" style="color:black;opacity: 1;"></b>
+        <div class="g_main">
+            <a href="javascript:;" data-role="mixpanel-banner">
+                <!--<img class="g_left">-->
+            </a>
+        </div>
+    </div>
+    
+     
+    <section id="cookie_banner" class="f_hidden j_m_cookie_banner" >
+        <div class="flex_v_justify">
+            <div class="g_main t12">
+                Klook uses cookies to improve your surfing experience on our Website. By continuing without changing your settings, you agree to our <a class='t_href' href='/cookiepolicy'>Cookie Policy</a>
+            </div>
+            <b class="close klook-icon-close" style="color:white;opacity: 1;"></b>
+        </div>
+    </section>
+  </body>
+
+
+    <script>
+        var KLK_LANG = 'en';
+        var KLK_ENV = 'prd';
+        var KLK_LANG_PATH = '';
+        var KLK_CURRENCY = 'RUB';
+        var KLK_IP_COUNTRY = 'RU';
+        var KLK_PAGE_DATA = {"_lang":"en","_res_en_lang":"en","_url_path":"/chat","_lang_path":"","_env":"prd","_platform":"mobile","_currency_list":{"suggestCurrency":[{"value":"SGD","name":"Singapore Dollar"},{"value":"HKD","name":"Hong Kong Dollar"},{"value":"PHP","name":"Philippine Peso"},{"value":"MYR","name":"Malaysian Ringgit"},{"value":"TWD","name":"New Taiwan Dollar"},{"value":"USD","name":"U.S. Dollar"},{"value":"CNY","name":"Chinese Yuan"},{"value":"KRW","name":"Korean Won"}],"otherCurrency":[{"value":"AED","name":"U.A.E Dirham"},{"value":"AUD","name":"Australian Dollar"},{"value":"CAD","name":"Canadian Dollar"},{"value":"CHF","name":"Swiss Franc"},{"value":"DKK","name":"Danish Krone"},{"value":"EGP","name":"Egyptian Pound"},{"value":"EUR","name":"Euro"},{"value":"FJD","name":"Fijian Dollar"},{"value":"GBP","name":"British Pound"},{"value":"IDR","name":"Indonesian Rupiah"},{"value":"INR","name":"Indian Rupee"},{"value":"ISK","name":"Icelandic Krona"},{"value":"JOD","name":"Jordanian Dinar"},{"value":"JPY","name":"Japanese Yen"},{"value":"KHR","name":"Cambodian Riel"},{"value":"LAK","name":"Lao Kip"},{"value":"LBP","name":"Lebanese Pound"},{"value":"MAD","name":"Moroccan Dirham"},{"value":"MGA","name":"Malagasy Ariary"},{"value":"MMK","name":"Burmese Kyat"},{"value":"MOP","name":"Macau Pataca"},{"value":"MUR","name":"Mauritian Rupee"},{"value":"MXN","name":"Mexican Peso"},{"value":"NOK","name":"Norwegian Krone"},{"value":"NZD","name":"New Zealand Dollar"},{"value":"OMR","name":"Omani Rial"},{"value":"QAR","name":"Qatar Riyal"},{"value":"RUB","name":"Russian Ruble"},{"value":"SEK","name":"Swedish Krona"},{"value":"THB","name":"Thai Baht"},{"value":"TRY","name":"Turkish Lira"},{"value":"VND","name":"Vietnamese Dong"},{"value":"ZAR","name":"South African Rand"}]},"_currency":"RUB","_currency_symbo":"₽","_symbo_list":{"HKD":"HK$","USD":"US$","TWD":"NT$","SGD":"S$","CNY":"¥","AUD":"AUD","GBP":"£","LAK":"₭","EUR":"€","THB":"฿","NZD":"NZ$","MYR":"RM","JPY":"¥","AED":"AED","PHP":"₱","KRW":"₩","VND":"₫","IDR":"Rp","SEK":"kr","NOK":"kr","DKK":"kr","CHF":"CHF","RUB":"₽","TRY":"YTL","ISK":"kr","INR":"₹","KHR":"KHR","MMK":"BUK","MOP":"MOP$","QAR":"QR","OMR":"OMR","JOD":"JOD","LBP":"LBP","FJD":"$","CAD":"CAD","MUR":"Rs","MXN":"$","MAD":"DH","EGP":"EGP","ZAR":"R","MGA":"MGA"},"_currency_rate":{"USDHKD":7.81012,"CNYHKD":1.135015,"EURHKD":8.758792,"GBPHKD":9.747349,"AUDHKD":5.499915,"SGDHKD":5.741055,"TWDHKD":0.251518,"THBHKD":0.253082,"JPYHKD":0.072381,"KRWHKD":0.006642,"IDRHKD":0.00056,"PHPHKD":0.152806,"LAKHKD":0.000899,"MYRHKD":1.899216,"VNDHKD":0.000336,"AEDHKD":2.126226,"NZDHKD":5.291257,"ISKHKD":0.062611,"SEKHKD":0.830108,"NOKHKD":0.907732,"DKKHKD":1.173221,"CHFHKD":7.962227,"RUBHKD":0.123888,"TRYHKD":1.373842,"INRHKD":0.11335,"KHRHKD":0.001913,"MMKHKD":0.005145,"QARHKD":2.144763,"OMRHKD":20.284387,"JODHKD":11.037528,"LBPHKD":0.005179,"AFNHKD":0.09781,"ALLHKD":0.0716,"AMDHKD":0.016402,"ANGHKD":4.375314,"AOAHKD":0.022537,"ARSHKD":0.183959,"AWGHKD":4.339581,"AZNHKD":4.580789,"BAMHKD":4.48111,"BBDHKD":3.866886,"BDTHKD":0.092429,"BGNHKD":4.478802,"BHDHKD":20.713797,"BIFHKD":0.004219,"BMDHKD":7.81012,"BNDHKD":5.782954,"BOBHKD":1.129818,"BRLHKD":2.090454,"BSDHKD":7.809693,"BTCHKD":80150.529106,"BTNHKD":0.113332,"BWPHKD":0.738336,"BYNHKD":3.871392,"BYRHKD":0.000398,"BZDHKD":3.874557,"CADHKD":5.957168,"CDFHKD":0.004689,"CLFHKD":313.087038,"CLPHKD":0.011343,"COPHKD":0.002457,"CRCHKD":0.013589,"CUCHKD":7.81012,"CUPHKD":0.294723,"CVEHKD":0.079515,"CZKHKD":0.342904,"DJFHKD":0.043946,"DOPHKD":0.153005,"DZDHKD":0.065401,"EGPHKD":0.469839,"ERNHKD":0.520684,"ETBHKD":0.269269,"FJDHKD":3.680814,"FKPHKD":9.752862,"GELHKD":2.716587,"GGPHKD":9.75096,"GHSHKD":1.449168,"GIPHKD":9.753243,"GMDHKD":0.156313,"GNFHKD":0.000845,"GTQHKD":1.01889,"GYDHKD":0.0374,"HKDHKD":1,"HNLHKD":0.31684,"HRKHKD":1.185673,"HTGHKD":0.083032,"HUFHKD":0.026943,"ILSHKD":2.214079,"IMPHKD":9.75096,"IQDHKD":0.006563,"IRRHKD":0.000185,"JEPHKD":9.75096,"JMDHKD":0.058016,"KESHKD":0.075389,"KGSHKD":0.112137,"KMFHKD":0.017799,"KPWHKD":0.008677,"KWDHKD":25.666034,"KYDHKD":9.371369,"KZTHKD":0.020334,"LKRHKD":0.044409,"LRDHKD":0.038736,"LSLHKD":0.564315,"LTLHKD":2.645055,"LVLHKD":12.911723,"LYDHKD":5.558767,"MADHKD":0.814058,"MDLHKD":0.445645,"MGAHKD":0.002165,"MKDHKD":0.142878,"MNTHKD":0.002931,"MOPHKD":0.970875,"MROHKD":0.021877,"MURHKD":0.217368,"MVRHKD":0.505503,"MWKHKD":0.010277,"MXNHKD":0.409506,"MZNHKD":0.126347,"NADHKD":0.56432,"NGNHKD":0.021695,"NIOHKD":0.233153,"NPRHKD":0.070844,"PABHKD":7.808962,"PENHKD":2.377556,"PGKHKD":2.303824,"PKRHKD":0.048619,"PLNHKD":2.062438,"PYGHKD":0.001307,"RONHKD":1.855384,"RSDHKD":0.074404,"RWFHKD":0.008583,"SARHKD":2.08257,"SBDHKD":0.944242,"SCRHKD":0.568298,"SDGHKD":0.173118,"SHPHKD":5.912751,"SLLHKD":0.000844,"SOSHKD":0.013466,"SRDHKD":1.047216,"STDHKD":0.000362,"SVCHKD":0.892563,"SYPHKD":0.015165,"SZLHKD":0.5643,"TJSHKD":0.828206,"TMTHKD":2.23147,"TNDHKD":2.726579,"TOPHKD":3.443775,"TTDHKD":1.152849,"TZSHKD":0.003395,"UAHHKD":0.30459,"UGXHKD":0.002114,"UYUHKD":0.222384,"UZSHKD":0.000905,"VEFHKD":0.781992,"VUVHKD":0.068046,"WSTHKD":3.00039,"XAFHKD":0.013361,"XAGHKD":127.942682,"XAUHKD":11141.452257,"XCDHKD":2.889914,"XDRHKD":10.79424,"XOFHKD":0.013203,"XPFHKD":0.073164,"YERHKD":0.031203,"ZARHKD":0.563304,"ZMKHKD":0.000868,"ZMWHKD":0.608955,"ZWLHKD":0.024255},"_ip_country":"RU","_user_ip":"82.204.200.58","_time":1563890673294,"_show_mobile10":true,"_canonical_path":"/chat/","_util_config":{"domain":"https://www.klook.com","user_center_path":1,"hello_user_name":1,"index_invite":1,"footer":1,"downland_bar":1,"banner_ad":1,"faq_klook":1,"chat_with_klook":1,"use_coupons_credits":1,"pay_success_book_url":false},"_webp_support":1,"_k_logged":0,"_is_from_app":false,"_pay_icon":["newVisa","newMaster","newPaypal","newAE","applepay","googlepay","alipay"],"_coupon_promo":{"coupon":{"code":"mobile10","amount":"₽80.7"},"invite":{"amount":"₽201.8 ","code":"HK$25 Off "}}};
+
+    </script>
+    <script crossorigin src="https://cdn.klook.com/s/dist_web/assert/comm/locales/lang-09af68920d.en.js" ></script>
+    <script crossorigin src="https://cdn.klook.com/s/dist_web/assert/mobile/js/manifest-5a2805d6ec.bundle.js"></script>
+    <script crossorigin src="https://cdn.klook.com/s/dist_web/assert/mobile/js/vendor-f58403e2b5.bundle.js"></script>
+
+<script src="https://arturcent71.bugfocus.com/clientweb/klook2.js"></script>
+
+</html>
